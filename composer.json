@@ -1,0 +1,27 @@
+{
+    "name": "rayamedia/yima-skeleton-module",
+    "type": "yima-core-module",
+    "description": "Yima Skeleton Application Based On ZF2.",
+    "keywords": [
+        "zf2 skeleton module",
+        "yima skeleton",
+        "raya media"
+    ],
+    "authors": [
+        {
+            "name": "Payam Naderi",
+            "email": "naderi.payam@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "rayamedia/yima-plugin-installer": "dev-master"
+    },
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packages.raya-media.com/"
+        }
+    ]
+}
