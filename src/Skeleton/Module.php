@@ -1,5 +1,5 @@
 <?php
-namespace Skeleton;
+namespace SkeletonModule;
 
 use Zend\Mvc\MvcEvent;
 
@@ -50,7 +50,7 @@ class Module
         return array(
             'Zend\Loader\StandardAutoloader' => array(
                 'namespaces' => array(
-                    __NAMESPACE__ => __DIR__,
+                    'Skeleton' => __DIR__,
                 ),
             ),
         );
