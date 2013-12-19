@@ -17,7 +17,18 @@
         "php": ">=5.3.3",
         "rayamedia/yima-plugin-installer": "dev-master"
     },
+    "extra": {
+        "yima-plugin-name": "ySkeletonModule"
+    },
     "minimum-stability": "dev",
+    "autoload" : {
+        "psr-0" : {
+            "ySkeletonModule\\" : "src/"
+        },
+        "classmap" : [
+            "./Module.php"
+        ]
+    },
     "repositories": [
         {
             "type": "composer",

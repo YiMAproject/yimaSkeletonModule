@@ -1,5 +1,5 @@
 <?php
-namespace SkeletonModule;
+namespace ySkeletonModule;
 
 use Zend\ModuleManager\Feature\InitProviderInterface;
 use Zend\ModuleManager\ModuleManagerInterface;
