@@ -1,5 +1,5 @@
 <?php
-namespace Skeleton\Controller;
+namespace yimaSkeletonModule\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 

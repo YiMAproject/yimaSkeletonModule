@@ -1,5 +1,5 @@
 <?php
-namespace ySkeletonModule;
+namespace yimaSkeletonModule;
 
 use Zend\ModuleManager\Feature\InitProviderInterface;
 use Zend\ModuleManager\ModuleManagerInterface;
@@ -66,7 +66,7 @@ class Module implements
         return array(
             'Zend\Loader\StandardAutoloader' => array(
                 'namespaces' => array(
-                    'Skeleton' => __DIR__,
+                    __NAMESPACE__ => __DIR__,
                 ),
             ),
         );
@@ -111,7 +111,7 @@ class Module implements
         /* Merged Config Key "controller" */
         return array(
             'invokables' => array(
-                'Skeleton\Controller\Index' => 'Skeleton\Controller\IndexController'
+                'yimaSkeletonModule\Controller\Index' => 'yimaSkeletonModule\Controller\IndexController'
             )
         );
     }

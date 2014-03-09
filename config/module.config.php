@@ -1,4 +1,6 @@
 <?php
+use Zend\Mvc\Router\RoutePluginManager;
+
 return array(
     'view_manager' => array(
         'template_path_stack' => array(
@@ -6,21 +8,42 @@ return array(
         ),
     ),
 
+    # _________________________________________________________________________________________________________
+
     'router' => array(
+        'router_class'  => 'Zend\Mvc\Router\Http\TreeRouteStack', // default, class name autoload
+        'route_plugins' => new RoutePluginManager(),              // default, class object
+
+        # all this options will pass to 'router_class'::factory()
+        // 'route_options' => 'value',
+
+        # 'router_class'::addRoutes()
         'routes' => array(
-            # application Home Page
             'skeleton-core' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
                     'route'    => '/skeleton',
                     'defaults' => array(
-                        'controller' => 'Skeleton\Controller\Index',
+                        'controller' => 'YimaSkeletonModule\Controller\Index',
                         'action'     => 'index',
                     ),
                 ),
             ),
         ),
+
+        # 'router_class'::setDefaultParams
+        'default_params' => array(
+
+        ),
+
+        # 'router_class'::addPrototypes()
+        'prototypes' => array(
+            //'name' => RouteInterface $class
+            //'name' => array $Arr, TreeRoutStack::routeFromArray($Arr)
+        ),
     ),
+
+    # _________________________________________________________________________________________________________
 
 	# translation enabled by text-domain speccialy use for this module
 	'translator' => array(
@@ -29,8 +52,17 @@ return array(
 				'type'     	  => 'phparray',
 				'base_dir' 	  => realpath(__DIR__ . '/../language'),
 				'pattern'  	  => '%s.php',
-				'text_domain' => 'Skeleton',
+				'text_domain' => 'YimaSkeletonModule',
 			),
 		),
 	),
+
+    // console ===========================================================================================
+
+    'console' => array(
+        'router' => array(
+            'router_class' => 'Zend\Mvc\Router\Console\SimpleRouteStack', // default, class name autoload
+        ),
+    ),
+
 );

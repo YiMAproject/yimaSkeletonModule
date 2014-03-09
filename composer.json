@@ -1,7 +1,7 @@
 {
     "name": "rayamedia/yima-skeleton-module",
     "type": "yima-core-module",
-    "description": "Yima Skeleton Application Based On ZF2.",
+    "description": "Yima Skeleton Module Based On ZF2.",
     "keywords": [
         "zf2 skeleton module",
         "yima skeleton",
@@ -18,12 +18,12 @@
         "rayamedia/yima-plugin-installer": "dev-master"
     },
     "extra": {
-        "yima-plugin-name": "ySkeletonModule"
+        "yima-plugin-name": "yimaSkeletonModule"
     },
     "minimum-stability": "dev",
     "autoload" : {
         "psr-0" : {
-            "ySkeletonModule\\" : "src/"
+            "yimaSkeletonModule\\" : "src/"
         },
         "classmap" : [
             "./Module.php"
