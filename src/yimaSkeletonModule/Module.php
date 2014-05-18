@@ -64,6 +64,10 @@ class Module implements
     public function getAutoloaderConfig()
     {
         return array(
+            # this one may speed up classes autoloading instead of StandardAutoload
+            'Zend\Loader\ClassMapAutoloader' => array(
+                __DIR__ . '/../../autoload_classmap.php',
+            ),
             'Zend\Loader\StandardAutoloader' => array(
                 'namespaces' => array(
                     __NAMESPACE__ => __DIR__,
