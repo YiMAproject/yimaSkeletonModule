@@ -2,6 +2,19 @@
 use Zend\Mvc\Router\RoutePluginManager;
 
 return array(
+    # set service manager configs
+    'service_manager' => array(
+        'factories' => array(
+            // ...
+        ),
+        'initializers' => array(
+            // ...
+        ),
+        // ...  ),
+    ),
+
+    # _________________________________________________________________________________________________________
+
     'view_manager' => array(
         'template_path_stack' => array(
            __DIR__ . '/../view',
@@ -64,5 +77,4 @@ return array(
             'router_class' => 'Zend\Mvc\Router\Console\SimpleRouteStack', // default, class name autoload
         ),
     ),
-
 );
