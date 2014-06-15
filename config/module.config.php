@@ -2,6 +2,23 @@
 use Zend\Mvc\Router\RoutePluginManager;
 
 return array(
+    # add an item into default navigation menu
+    'navigation' => array(
+        'default' => array(
+            # MVC pages are link to on-site web pages, and are defined using -
+            # MVC parameters (action, controller, route, params).
+            array(
+                'label'  => 'YiMa Modules',
+                'uri'    => 'http://github.com/yimaProject',
+                'target' => '_blank',
+                'order'  => 1000,
+            ),
+            # URI pages are defined by a single property uri, which give you the -
+            # full flexibility to link off-site pages
+
+        ),
+    ),
+
     # set service manager configs
     'service_manager' => array(
         'factories' => array(
