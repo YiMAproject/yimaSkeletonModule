@@ -31,6 +31,27 @@ return array(
     # _________________________________________________________________________________________________________
 
     'view_manager' => array(
+        /**
+         * Register additional mvc rendering strategies
+         * If there is a "mvc_strategies" key of the view manager configuration, loop
+         * through it. Pull each as a service from the service manager, and, if it
+         * is a ListenerAggregate, attach it to the view, at priority 100. This
+         * latter allows each to trigger before the default mvc rendering strategy,
+         * and for them to trigger in the order they are registered.
+         * @see \Zend\Mvc\View\Http\ViewManager::registerMvcRenderingStrategies
+         */
+        'mvc_strategies' => array(),
+        /**
+         * Register additional view strategies
+         * If there is a "strategies" key of the view manager configuration, loop
+         * through it. Pull each as a service from the service manager, and, if it
+         * is a ListenerAggregate, attach it to the view, at priority 100. This
+         * latter allows each to trigger before the default strategy, and for them
+         * to trigger in the order they are registered.
+         * @see \Zend\Mvc\View\Http\ViewManager::registerViewStrategies
+         */
+        'strategies' => array(),
+
         'template_path_stack' => array(
            __DIR__ . '/../view',
         ),
