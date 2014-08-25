@@ -1,6 +1,4 @@
 <?php
-use Zend\Mvc\Router\RoutePluginManager;
-
 return array(
     # add an item into default navigation menu
     'navigation' => array(
@@ -41,8 +39,8 @@ return array(
     # _________________________________________________________________________________________________________
 
     'router' => array(
-        'router_class'  => 'Zend\Mvc\Router\Http\TreeRouteStack', // default, class name autoload
-        'route_plugins' => new RoutePluginManager(),              // default, class object
+        // 'router_class'  => 'Zend\Mvc\Router\Http\TreeRouteStack', // default, class name autoload
+        // 'route_plugins' => new RoutePluginManager(),              // default, class object
 
         # all this options will pass to 'router_class'::factory()
         // 'route_options' => 'value',

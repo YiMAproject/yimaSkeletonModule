@@ -36,10 +36,10 @@ class Module implements
     /**
      * Initialize workflow
      *
-     * @param  ModuleManagerInterface $manager
+     * @param  ModuleManagerInterface $moduleManager
      * @return void
      */
-    public function init(ModuleManagerInterface $manager)
+    public function init(ModuleManagerInterface $moduleManager)
     {
         // TODO: Implement init() method.
     }
