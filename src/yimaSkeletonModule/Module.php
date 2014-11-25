@@ -47,7 +47,7 @@ class Module implements
     /**
      * Listen to the bootstrap event
      *
-     * @param MvcEvent $e
+     * @param EventInterface|MvcEvent $e
      * @return array
      */
     public function onBootstrap(EventInterface $e)
@@ -94,16 +94,21 @@ class Module implements
     /**
      * Implemented Service Listener Features --------------------------------------------------\
      *
-     * @see \Zend\ServiceManager\Config
      */
 
     /**
      * @inheritdoc
      *
+     * @see \Zend\ServiceManager\Config
      */
     public function getServiceConfig()
     {
-        // TODO: Implement getServiceConfig() method.
+        return array(
+            'factories' => array(
+                # be aware to using "\" separator
+                # 'factory_service' => __NAMESPACE__.'\Service\StaticUriFactory'
+            ),
+        );
     }
 
     /**
