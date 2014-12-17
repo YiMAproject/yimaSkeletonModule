@@ -11,10 +11,27 @@ return array(
                 'target' => '_blank',
                 'order'  => 1000,
             ),
+            [
+                'label' => 'Mvc Item',
+                'route' => 'home',
+
+                #'action' => 'index',
+                #'controller' => 'index',
+                #'routeMatch' => RouteMatch,
+
+                'pages' => [
+                    // same above structure recursively
+                ],
+
+                'order' => -1000,
+            ],
             # URI pages are defined by a single property uri, which give you the -
             # full flexibility to link off-site pages
-
         ),
+
+        // OR
+
+        # 'default' => 'path_to_config_file' // support with Zend\Config\Factory::fromfile(..)
     ),
 
     # set service manager configs
