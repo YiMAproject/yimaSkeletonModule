@@ -31,6 +31,13 @@ return array(
             ],
             # URI pages are defined by a single property uri, which give you the -
             # full flexibility to link off-site pages
+
+            # Type is a class that constructed with options
+            [
+                'type' => 'Zend\Navigation\Page\Mvc',
+                'option_a'  => 'a',
+                'options_b' => 'b',
+            ],
         ],
 
         // OR
