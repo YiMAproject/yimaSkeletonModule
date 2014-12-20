@@ -1,16 +1,20 @@
 <?php
 return array(
     # add an item into default navigation menu
-    'navigation' => array(
-        'default' => array(
+    'navigation' => [
+        # note: you can build navigation with extending default factory -
+        #       service "Zend\Navigation\Service\DefaultNavigationFactory"
+        #       getName() method of that service will equal to config name
+        #       like "default" as below
+        'default' => [
             # MVC pages are link to on-site web pages, and are defined using -
             # MVC parameters (action, controller, route, params).
-            array(
+            [
                 'label'  => 'YiMa Modules',
                 'uri'    => 'http://github.com/yimaProject',
                 'target' => '_blank',
                 'order'  => 1000,
-            ),
+            ],
             [
                 'label' => 'Mvc Item',
                 'route' => 'home',
@@ -27,27 +31,27 @@ return array(
             ],
             # URI pages are defined by a single property uri, which give you the -
             # full flexibility to link off-site pages
-        ),
+        ],
 
         // OR
 
         # 'default' => 'path_to_config_file' // support with Zend\Config\Factory::fromfile(..)
-    ),
+    ],
 
     # set service manager configs
-    'service_manager' => array(
-        'factories' => array(
+    'service_manager' => [
+        'factories' => [
             // ...
-        ),
-        'initializers' => array(
+        ],
+        'initializers' => [
             // ...
-        ),
+        ],
         // ...  ),
-    ),
+    ],
 
     # _________________________________________________________________________________________________________
 
-    'view_manager' => array(
+    'view_manager' => [
         /**
          * Register additional mvc rendering strategies
          * If there is a "mvc_strategies" key of the view manager configuration, loop
@@ -57,7 +61,7 @@ return array(
          * and for them to trigger in the order they are registered.
          * @see \Zend\Mvc\View\Http\ViewManager::registerMvcRenderingStrategies
          */
-        'mvc_strategies' => array(),
+        'mvc_strategies' => [],
         /**
          * Register additional view strategies
          * If there is a "strategies" key of the view manager configuration, loop
@@ -67,16 +71,16 @@ return array(
          * to trigger in the order they are registered.
          * @see \Zend\Mvc\View\Http\ViewManager::registerViewStrategies
          */
-        'strategies' => array(),
+        'strategies' => [],
 
-        'template_path_stack' => array(
+        'template_path_stack' => [
            __DIR__ . '/../view',
-        ),
-    ),
+        ],
+    ],
 
     # _________________________________________________________________________________________________________
 
-    'router' => array(
+    'router' => [
         // 'router_class'  => 'Zend\Mvc\Router\Http\TreeRouteStack', // default, class name autoload
         // 'route_plugins' => new RoutePluginManager(),              // default, class object
 
@@ -84,50 +88,50 @@ return array(
         // 'route_options' => 'value',
 
         # 'router_class'::addRoutes()
-        'routes' => array(
-            'skeleton-core' => array(
+        'routes' => [
+            'skeleton-core' => [
                 'type' => 'Zend\Mvc\Router\Http\Literal',
-                'options' => array(
+                'options' => [
                     'route'    => '/skeleton',
-                    'defaults' => array(
+                    'defaults' => [
                         'controller' => 'YimaSkeletonModule\Controller\Index',
                         'action'     => 'index',
-                    ),
-                ),
-            ),
-        ),
+                    ],
+                ],
+            ],
+        ],
 
         # 'router_class'::setDefaultParams
-        'default_params' => array(
+        'default_params' => [
 
-        ),
+        ],
 
         # 'router_class'::addPrototypes()
-        'prototypes' => array(
+        'prototypes' => [
             //'name' => RouteInterface $class
             //'name' => array $Arr, TreeRoutStack::routeFromArray($Arr)
-        ),
-    ),
+        ],
+    ],
 
     # _________________________________________________________________________________________________________
 
 	# translation enabled by text-domain speccialy use for this module
-	'translator' => array(
-		'translation_file_patterns' => array(
-			array(
+	'translator' => [
+		'translation_file_patterns' => [
+			[
 				'type'     	  => 'phparray',
 				'base_dir' 	  => realpath(__DIR__ . '/../language'),
 				'pattern'  	  => '%s.php',
 				'text_domain' => 'YimaSkeletonModule',
-			),
-		),
-	),
+			],
+		],
+	],
 
     // console ===========================================================================================
 
-    'console' => array(
-        'router' => array(
+    'console' => [
+        'router' => [
             'router_class' => 'Zend\Mvc\Router\Console\SimpleRouteStack', // default, class name autoload
-        ),
-    ),
+        ],
+    ],
 );
